@@ -1,1 +1,76 @@
-# learningGit
+# learning Git
+## Ravi usual commands 
+```
+git log --oneline -n5
+```
+# Git Rebase 
+```
+Git pull --rebase
+Git rebase side1 side2 
+Git rebase destination change
+```
+It is carried out on the destination, and once the change is done the branch changes to the one specified in change
+## Detaching Head
+First we have to talk about "HEAD". HEAD is the symbolic name for the currently checked out commit 
+Detaching HEAD just means attaching it to a commit instead of a branch.
+Specify this commit by its hash. The hash for each commit is displayed on the circle that represents the commit.
+## Relaltive Commits
+Relative commits are powerful, but we will introduce two simple ones here:
+	• Moving upwards one commit at a time with ^
+	• Moving upwards a number of times with ~<num>
+
+Saying main^ is equivalent to "the first parent of main".
+main^^ is the grandparent (second-generation ancestor) of main!
+
+```
+Git checkout main^
+Git checkout mainˆˆ
+```
+
+## Branch Forcing 
+You're an expert on relative refs now, so let's actually use them for something.
+One of the most common ways I use relative refs is to move branches around. You can directly reassign a branch to a commit with the -f option. So something like:
+git branch -f main HEAD~3
+moves (by force) the main branch to three parents behind HEAD.
+
+
+## Git Reset
+git reset reverts changes by moving a branch reference backwards in time to an older commit. In this sense you can think of it as "rewriting history;" git reset will move a branch backwards as if the commit had never been made in the first place.
+
+## Git Revert
+While resetting works great for local branches on your own machine, its method of "rewriting history" doesn't work for remote branches that others are using.
+In order to reverse changes and share those reversed changes with others, we need to use git revert. Let's see it in action.
+
+git cherry-pick. It takes on the following form:
+```
+	• git cherry-pick <Commit1> <Commit2> <...>
+
+```
+It's a very straightforward way of saying that you would like to copy a series of commits below your current location (HEAD). I personally love cherry-pick because there is very little magic involved and it's easy to understand.
+
+
+## Git Interactive Rebase
+Git cherry-pick is great when you know which commits you want (and you know their corresponding hashes) -- it's hard to beat the simplicity it provides.
+But what about the situation where you don't know what commits you want? Thankfully git has you covered there as well! We can use interactive rebasing for this -- it's the best way to review a series of commits you're about to rebase.
+```
+Git commit --ammend
+```
+
+## Git Tags
+As you have learned from previous lessons, branches are easy to move around and often refer to different commits as work is completed on them. Branches are easily mutated, often temporary, and always changing.
+If that's the case, you may be wondering if there's a way to permanently mark historical points in your project's history. For things like major releases and big merges, is there any way to mark these commits with something more permanent than a branch?
+You bet there is! Git tags support this exact use case -- they (somewhat) permanently mark certain commits as "milestones" that you can then reference like a branch.
+More importantly though, they never move as more commits are created. You can't "check out" a tag and then complete work on that tag -- tags exist as anchors in the commit tree that designate certain spots.
+
+## Git Describe
+Because tags serve as such great "anchors" in the codebase, git has a command to describewhere you are relative to the closest "anchor" (aka tag). And that command is called git describe!
+Git describe can help you get your bearings after you've moved many commits backwards or forwards in history; this can happen after you've completed a git bisect (a debugging search) or when sitting down at a coworkers computer who just got back from vacation.
+
+Git describe takes the form of:
+git describe <ref>
+Where <ref> is anything git can resolve into a commit. If you don't specify a ref, git just uses where you're checked out right now (HEAD).
+The output of the command looks like:
+<tag>_<numCommits>_g<hash>
+Where tag is the closest ancestor tag in history, numCommits is how many commits away that tag is, and <hash> is the hash of the commit being described.
+
+
