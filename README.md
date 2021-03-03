@@ -3,6 +3,15 @@
 ```
 git log --oneline -n5
 ```
+## Gerrit Confluence page
+```
+> git diff                # Compare "working tree" against the last (HEAD) commit on this branch.
+> git diff --cached       # Compare "staged files"/"index" against the last commit on this branch.
+> git diff HEAD~1         # Compare "working tree" against the last-but-one commit on this branch (also ~2, ~3, etc).
+> git diff <commit>       # Compare "working tree" against a specific commit.
+> git diff <branch>       # Compare "working tree" against a specific branch.
+> git diff <a> <b>        # Compare two branches, commits, tags.
+```
 # Git Rebase 
 ```
 Git pull --rebase
