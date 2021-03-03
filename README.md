@@ -12,12 +12,61 @@ git log --oneline -n5
 > git diff <branch>       # Compare "working tree" against a specific branch.
 > git diff <a> <b>        # Compare two branches, commits, tags.
 ```
-# Git Rebase 
+Showing previous commits
+```
+> git log                 # View all commits on this branch.
+> git log                 # View all commits on this branch.
+> git log <branch>        # View all commits on another branch.
+> git show                # Show details of the last commit on this branch.
+> git show <commit>       # Show details of the given commit.
+> git show <branch>       # Show details of the last commit on the given branch. 
+```
+Checkout out a branch
+```
+> git branch                    # List all local branches.
+> git branch -a                 # List all branches (local and remote).
+> git checkout develop          # Check out a branch.
+```
+Checkout a tag
+```
+> git tag -l                                    # List all tags
+> git checkout weekly/2015-w47-develop-0        # Check out a specific tag.
+```
+Checkout out a specific commit
+```
+> git checkout f11d5963787e250168d7cb582c3313a6c7a5cb3a
+```
+Amending a commit
+```
+# Make edits...
+> git status
+> git add <list_of_files>
+> git commit --amend            # Amends existing commit, instead of creating a new one.
+```
+Updating remote branches
+```
+> git fetch                     # Download commits made to origin branches.
+> git fetch --all               # Download commits made to all remote branches.
+```
+Updating local branches
+```
+> git pull --rebase             # Download commits made to origin branches and rebase the current branch on top of the branch it tracks.
+> git rebase <remote> <local>   # Rebase <local> branch onto <remote> branch.Updating remote branches
+> git fetch                     # Download commits made to origin branches.
+> git fetch --all               # Download commits made to all remote branches.
+```
+Updating local branches
+```
+> git pull --rebase             # Download commits made to origin branches and rebase the current branch on top of the branch it tracks.
+> git rebase <remote> <local>   # Rebase <local> branch onto <remote> branch.
+```
+# Git Rebase
 ```
 Git pull --rebase
 Git rebase side1 side2 
 Git rebase destination change
 ```
+
 It is carried out on the destination, and once the change is done the branch changes to the one specified in change
 ## Detaching Head
 First we have to talk about "HEAD". HEAD is the symbolic name for the currently checked out commit 
