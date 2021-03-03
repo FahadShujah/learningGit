@@ -96,6 +96,20 @@ Git checkout main^
 Git checkout mainˆˆ
 ```
 
+## Git Merge 
+
+Checkout the branch where you want to merge into and then use the merge command 
+```
+> git checkout B                  # Check out the target branch.
+> git pull --rebase               # Rebase (to ensure your branch is up-to-date).
+> git merge origin/A --no-ff      # Merge branch origin/A into branch B (without fast-forwarding).
+> git mergetool                   # Resolve conflicts...
+> git add <resolved_files>        # Add fixed files.
+> git merge --continue
+# Test...
+> git push origin B:refs/for/B    # Push back to Gerrit.
+```
+
 ## Branch Forcing 
 You're an expert on relative refs now, so let's actually use them for something.
 One of the most common ways I use relative refs is to move branches around. You can directly reassign a branch to a commit with the -f option. So something like:
