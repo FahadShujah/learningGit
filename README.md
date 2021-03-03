@@ -60,12 +60,23 @@ Updating local branches
 > git pull --rebase             # Download commits made to origin branches and rebase the current branch on top of the branch it tracks.
 > git rebase <remote> <local>   # Rebase <local> branch onto <remote> branch.
 ```
+Develop feature on local branch and open a review
+```
+> git checkout -b watchdog_timer -t origin/feature/blah            # Check out a local branch (watchdog_timer) that tracks remote branch (origin/feature/blah).
+# Make edits...
+> git status                                                       # Show status of files (identify those which have been edited).
+> git add <list_of_files>                                          # Add all the files you want to share (normally all edited files).
+> git commit                                                       # Commit files.
+> git pull --rebase                                                # Update the commit with remote changes.
+> git push origin watchdog_timer:refs/for/feature/blah             # Open a review (n.b. refs/for/ magic prefix opens the review).
+```
 # Git Rebase
 ```
 Git pull --rebase
 Git rebase side1 side2 
 Git rebase destination change
 ```
+
 
 It is carried out on the destination, and once the change is done the branch changes to the one specified in change
 ## Detaching Head
