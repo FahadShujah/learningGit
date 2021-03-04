@@ -3,6 +3,22 @@
 ```
 git log --oneline -n5
 ```
+## Creating a Remote Branch 
+
+First, you must create your branch locally
+```
+git checkout -b your_branch
+```
+After that, you can work locally in your branch, when you are ready to share the branch, push it. The next command push the branch to the remote repository origin and tracks it
+```
+git push -u origin your_branch
+```
+Teammates can reach your branch, by doing:
+```
+git fetch
+git checkout origin/your_branch
+```
+
 
 ## Tracking Remote Branch 
 ```
