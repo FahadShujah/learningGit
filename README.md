@@ -3,6 +3,24 @@
 ```
 git log --oneline -n5
 ```
+
+## Tracking Remote Branch 
+```
+git checkout -b totallyNotMain o/main
+```
+
+### Way #2
+
+Another way to set remote tracking on a branch is to simply use the git branch -u option. Running
+
+git branch -u o/main foo
+
+will set the foo branch to track o/main. If foo is currently checked out you can even leave it off:
+
+git branch -u o/main
+
+```
+
 ## Gerrit Confluence page
 ```
 > git diff                # Compare "working tree" against the last (HEAD) commit on this branch.
