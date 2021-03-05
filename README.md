@@ -38,8 +38,8 @@ git branch -u o/main
 
 ```
 ## How to add only modified files 
-You can do ``git add -u so that it will stage the modified and deleted files.
-
+You can do ``git add -u``so that it will stage the modified and deleted files.
+The git commit -a stands for all. This option automatically stages all modified files to be committed. If new files are added the -a option will not stage those new files. Only files that the Git repository is aware of will be committed
 ## How to remove local untracked files from the current Git branch
 To remove directories, run 
 ``git clean -f -d`` or ``git clean -fd``.
