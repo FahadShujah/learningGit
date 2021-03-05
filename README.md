@@ -37,6 +37,9 @@ will set the foo branch to track o/main. If foo is currently checked out you can
 git branch -u o/main
 
 ```
+## How to add only modified files 
+You can do ``git add -u so that it will stage the modified and deleted files.
+
 ## How to remove local untracked files from the current Git branch
 To remove directories, run 
 ``git clean -f -d`` or ``git clean -fd``.
