@@ -37,6 +37,16 @@ will set the foo branch to track o/main. If foo is currently checked out you can
 git branch -u o/main
 
 ```
+## Stashing 
+```
+git stash 
+```
+it stashes the files staged
+```
+git stash pop 
+```
+takes out the files previously stashed
+
 
 ## Gerrit Confluence page
 ```
