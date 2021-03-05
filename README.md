@@ -47,6 +47,12 @@ git branch -u o/main
 > git diff <branch>       # Compare "working tree" against a specific branch.
 > git diff <a> <b>        # Compare two branches, commits, tags.
 ```
+if you want to see what you haven't git added yet:
+
+git diff myfile.txt
+or if you want to see already added changes
+
+git diff --cached myfile.txt
 Showing previous commits
 ```
 > git log                 # View all commits on this branch.
