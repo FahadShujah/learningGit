@@ -54,7 +54,7 @@ it stashes the files staged
 git stash pop 
 ```
 takes out the files previously stashed
-
+you want ```git stash drop``` to drop the stashed staged files
 
 ## Gerrit Confluence page
 ```
