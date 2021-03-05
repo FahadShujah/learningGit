@@ -37,6 +37,11 @@ will set the foo branch to track o/main. If foo is currently checked out you can
 git branch -u o/main
 
 ```
+## How to remove local untracked files from the current Git branch
+To remove directories, run 
+``git clean -f -d`` or ``git clean -fd``.
+To remove ignored files, ``run git clean -f -X`` or ``git clean -fX``.
+To remove ignored and non-ignored files, ``run git clean -f -x`` or ``git clean -fx.
 ## Stashing 
 ```
 git stash 
