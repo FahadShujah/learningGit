@@ -3,6 +3,7 @@
 ```
 git log --oneline -n5
 ```
+
 ## Creating a Remote Branch 
 
 First, you must create your branch locally
@@ -48,6 +49,7 @@ To remove ignored and non-ignored files, ``run git clean -f -x`` or ``git clean 
 ## Stashing 
 ```
 git stash 
+git stash --include-untracked
 ```
 it stashes the files staged
 ```
