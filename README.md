@@ -42,11 +42,15 @@ git branch -u o/main
 
 Careful: git reset --hard WILL DELETE YOUR WORKING DIRECTORY CHANGES. Be sure to stash any local changes you want to keep before running this command.
 Assuming you are sitting on that commit, then this command will wack it...
-``git reset --hard HEAD~1``
+``
+git reset --hard HEAD~1
+``
 The HEAD~1 means the commit before head.
 Or, you could look at the output of git log, find the commit id of the commit you want to back up to, and then do this:
 
-``git reset --hard <sha1-commit-id>``
+``
+git reset --hard <sha1-commit-id>
+``
 ## How to add only modified files 
 You can do ``git add -u``so that it will stage the modified and deleted files.
 The git commit -a stands for all. This option automatically stages all modified files to be committed. If new files are added the -a option will not stage those new files. Only files that the Git repository is aware of will be committed
